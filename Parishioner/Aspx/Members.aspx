@@ -342,27 +342,33 @@
                                             <dx:TabPage Name="PChilds" Text="Children">
                                                 <ContentCollection>
                                                     <dx:ContentControl runat="server">
-                                                        <dx:ASPxGridView ID="GVChildren" runat="server" AutoGenerateColumns="False" DataSourceID="DSChildren" EnableTheming="True" OnBeforePerformDataSelect="GVChildren_BeforePerformDataSelect" Theme="Office2010Black">
+                                                        <dx:ASPxGridView ID="GVChildren" runat="server" AutoGenerateColumns="False" DataSourceID="DSChildren" EnableTheming="True" OnBeforePerformDataSelect="GVChildren_BeforePerformDataSelect" Theme="Office2010Black" KeyFieldName="child_id">
                                                             <SettingsEditing Mode="Batch">
                                                             </SettingsEditing>
                                                             <Columns>
-                                                                <dx:GridViewDataTextColumn FieldName="child_id" ShowInCustomizationForm="True" VisibleIndex="0">
+                                                                <dx:GridViewCommandColumn ShowDeleteButton="True" ShowEditButton="True" ShowInCustomizationForm="True" ShowNewButtonInHeader="True" VisibleIndex="0">
+                                                                </dx:GridViewCommandColumn>
+                                                                <dx:GridViewDataTextColumn FieldName="child_id" ShowInCustomizationForm="True" VisibleIndex="1" Visible="False">
+                                                                </dx:GridViewDataTextColumn>
+                                                                <dx:GridViewDataTextColumn FieldName="member_id" ShowInCustomizationForm="True" VisibleIndex="2" Visible="False">
                                                                     <EditFormSettings Visible="False" />
                                                                 </dx:GridViewDataTextColumn>
-                                                                <dx:GridViewDataTextColumn FieldName="member_id" ShowInCustomizationForm="True" VisibleIndex="1">
+                                                                <dx:GridViewDataTextColumn FieldName="f_name" ShowInCustomizationForm="True" VisibleIndex="3" Caption="First">
                                                                 </dx:GridViewDataTextColumn>
-                                                                <dx:GridViewDataTextColumn FieldName="f_name" ShowInCustomizationForm="True" VisibleIndex="2">
+                                                                <dx:GridViewDataTextColumn FieldName="m_name" ShowInCustomizationForm="True" VisibleIndex="4" Caption="Middle">
                                                                 </dx:GridViewDataTextColumn>
-                                                                <dx:GridViewDataTextColumn FieldName="m_name" ShowInCustomizationForm="True" VisibleIndex="3">
+                                                                <dx:GridViewDataTextColumn FieldName="l_name" ShowInCustomizationForm="True" VisibleIndex="5" Caption="Last">
                                                                 </dx:GridViewDataTextColumn>
-                                                                <dx:GridViewDataTextColumn FieldName="l_name" ShowInCustomizationForm="True" VisibleIndex="4">
+                                                                <dx:GridViewDataTextColumn FieldName="age" ShowInCustomizationForm="True" VisibleIndex="6" Caption="Age">
                                                                 </dx:GridViewDataTextColumn>
-                                                                <dx:GridViewDataTextColumn FieldName="age" ShowInCustomizationForm="True" VisibleIndex="5">
-                                                                </dx:GridViewDataTextColumn>
-                                                                <dx:GridViewDataTextColumn FieldName="gender_id" ShowInCustomizationForm="True" VisibleIndex="6">
-                                                                </dx:GridViewDataTextColumn>
-                                                                <dx:GridViewDataTextColumn FieldName="relationship_id" ShowInCustomizationForm="True" VisibleIndex="7">
-                                                                </dx:GridViewDataTextColumn>
+                                                                <dx:GridViewDataComboBoxColumn Caption="Gender" FieldName="gender_id" ShowInCustomizationForm="True" VisibleIndex="7">
+                                                                    <PropertiesComboBox DataSourceID="DSChildType" TextField="par_desc" ValueField="par_num">
+                                                                    </PropertiesComboBox>
+                                                                </dx:GridViewDataComboBoxColumn>
+                                                                <dx:GridViewDataComboBoxColumn Caption="Relationship" FieldName="relationship_id" ShowInCustomizationForm="True" VisibleIndex="8">
+                                                                    <PropertiesComboBox DataSourceID="DSGender" TextField="par_desc" ValueField="par_num">
+                                                                    </PropertiesComboBox>
+                                                                </dx:GridViewDataComboBoxColumn>
                                                             </Columns>
                                                         </dx:ASPxGridView>
                                                         <asp:SqlDataSource ID="DSChildren" runat="server" ConnectionString="<%$ ConnectionStrings:NationConnStr %>" DeleteCommand="DELETE FROM parish.child WHERE (child_id = ?)" InsertCommand="INSERT INTO parish.child(member_id, f_name, m_name, l_name, age, gender_id, relationship_id) VALUES (?, ?, ?, ?, ?, ?, ?)" ProviderName="<%$ ConnectionStrings:NationConnStr.ProviderName %>" SelectCommand="SELECT child_id, member_id, f_name, m_name, l_name, age, gender_id, relationship_id FROM parish.child WHERE (member_id = ?)" UpdateCommand="UPDATE parish.child SET member_id = ?, f_name = ?, m_name = ?, l_name = ?, age = ?, gender_id = ?, relationship_id = ? WHERE (child_id = ?)">
@@ -372,14 +378,24 @@
                                                             <InsertParameters>
                                                                 <asp:SessionParameter Name="member_id" SessionField="member_id" />
                                                                 <asp:SessionParameter Name="f_name" SessionField="f_name" />
+                                                                <asp:SessionParameter Name="m_name" SessionField="m_name" />
+                                                                <asp:SessionParameter Name="l_name" SessionField="l_name" />
+                                                                <asp:SessionParameter Name="age" SessionField="age" />
+                                                                <asp:SessionParameter Name="gender_id" SessionField="gender_id" />
+                                                                <asp:SessionParameter Name="relationship_id" SessionField="relationship_id" />
                                                             </InsertParameters>
                                                             <SelectParameters>
                                                                 <asp:SessionParameter Name="member_id" SessionField="member_id" />
                                                             </SelectParameters>
                                                             <UpdateParameters>
-                                                                <asp:SessionParameter Name="interest_id" SessionField="interest_id" />
                                                                 <asp:SessionParameter Name="member_id" SessionField="member_id" />
+                                                                <asp:SessionParameter Name="f_name" SessionField="f_name" />
                                                                 <asp:SessionParameter Name="m_name" SessionField="m_name" />
+                                                                <asp:SessionParameter Name="l_name" SessionField="l_name" />
+                                                                <asp:SessionParameter Name="age" SessionField="age" />
+                                                                <asp:SessionParameter Name="gender_id" SessionField="gender_id" />
+                                                                <asp:SessionParameter Name="relationship_id" SessionField="relationship_id" />
+                                                                <asp:SessionParameter Name="child_id" SessionField="child_id" />
                                                             </UpdateParameters>
                                                         </asp:SqlDataSource>
                                                     </dx:ContentControl>
