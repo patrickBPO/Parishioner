@@ -362,11 +362,11 @@
                                                                 <dx:GridViewDataTextColumn FieldName="age" ShowInCustomizationForm="True" VisibleIndex="6" Caption="Age">
                                                                 </dx:GridViewDataTextColumn>
                                                                 <dx:GridViewDataComboBoxColumn Caption="Gender" FieldName="gender_id" ShowInCustomizationForm="True" VisibleIndex="7">
-                                                                    <PropertiesComboBox DataSourceID="DSChildType" TextField="par_desc" ValueField="par_num">
+                                                                    <PropertiesComboBox DataSourceID="DSGender" TextField="par_desc" ValueField="par_num">
                                                                     </PropertiesComboBox>
                                                                 </dx:GridViewDataComboBoxColumn>
                                                                 <dx:GridViewDataComboBoxColumn Caption="Relationship" FieldName="relationship_id" ShowInCustomizationForm="True" VisibleIndex="8">
-                                                                    <PropertiesComboBox DataSourceID="DSGender" TextField="par_desc" ValueField="par_num">
+                                                                    <PropertiesComboBox DataSourceID="DSChildType" TextField="par_desc" ValueField="par_num">
                                                                     </PropertiesComboBox>
                                                                 </dx:GridViewDataComboBoxColumn>
                                                             </Columns>

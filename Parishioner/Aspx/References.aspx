@@ -121,7 +121,7 @@
                                     </FocusedRow>
                                 </Styles>
                             </dx:ASPxGridView>
-                            <asp:SqlDataSource ID="DSPos" runat="server" ConnectionString="<%$ ConnectionStrings:NationConnStr %>" DeleteCommand="DELETE FROM param WHERE (par_code = 26) AND (par_num = ?)" InsertCommand="INSERT INTO param (par_code, par_desc, par_num, par_numfield, par_table_name) SELECT 26,?,(SELECT MAX(p.par_num + 1) FROM param AS p WHERE p.par_code = 26),0,'position'" ProviderName="<%$ ConnectionStrings:NationConnStr.ProviderName %>" SelectCommand="SELECT par_desc, par_num FROM param WHERE (par_code = 26) ORDER BY par_desc, par_num" UpdateCommand="UPDATE param SET par_desc = ? WHERE (par_code = 26) AND (par_num = ?)"></asp:SqlDataSource>
+                            <asp:SqlDataSource ID="DSPos" runat="server" ConnectionString="<%$ ConnectionStrings:NationConnStr %>" DeleteCommand="DELETE FROM param WHERE (par_code = 1) AND (par_num = ?)" InsertCommand="INSERT INTO param (par_code, par_desc, par_num, par_numfield, par_table_name) SELECT 1,?,(SELECT MAX(p.par_num + 1) FROM param AS p WHERE p.par_code = 1),0,'position'" ProviderName="<%$ ConnectionStrings:NationConnStr.ProviderName %>" SelectCommand="SELECT par_desc, par_num FROM param WHERE (par_code = 1) ORDER BY par_desc, par_num" UpdateCommand="UPDATE param SET par_desc = ? WHERE (par_code = 1) AND (par_num = ?)"></asp:SqlDataSource>
                         </dx:PopupControlContentControl>
                     </ContentCollection>
                 </dx:ASPxPopupControl>
