@@ -20,7 +20,7 @@
                             <br />
                             <asp:UpdatePanel ID="UpdatePanel2" runat="server">
                                 <ContentTemplate>
-                                    <dx:ASPxPageControl ID="PCMemberSub" runat="server" ActiveTabIndex="6" AutoPostBack="True" Theme="PlasticBlue">
+                                    <dx:ASPxPageControl ID="PCMemberSub" runat="server" ActiveTabIndex="0" AutoPostBack="True" Theme="PlasticBlue">
                                         <TabPages>
                                             <dx:TabPage Name="PDegree" Text="Degrees">
                                                 <ContentCollection>
@@ -192,7 +192,7 @@
                                                             <UpdateParameters>
                                                                 <asp:SessionParameter Name="member_id" SessionField="member_id" />
                                                                 <asp:SessionParameter Name="c_desc" SessionField="c_desc" />
-                                                                <asp:SessionParameter Name=" course_no" SessionField=" course_no" />
+                                                                <asp:SessionParameter Name="course_no" SessionField="course_no" />
                                                                 <asp:SessionParameter Name="c_comments" SessionField="c_comments" />
                                                                 <asp:SessionParameter Name="b_date" SessionField="b_date" />
                                                                 <asp:SessionParameter Name="e_date" SessionField="e_date" />
@@ -216,7 +216,6 @@
                                                                     </PropertiesDateEdit>
                                                                 </dx:GridViewDataDateColumn>
                                                                 <dx:GridViewDataTextColumn Caption="Comments" FieldName="c_comments" ShowInCustomizationForm="True" VisibleIndex="7">
-                                                                    <EditFormSettings Visible="False" />
                                                                 </dx:GridViewDataTextColumn>
                                                                 <dx:GridViewDataTextColumn Caption="Attended" FieldName="c_desc" ShowInCustomizationForm="True" VisibleIndex="3">
                                                                 </dx:GridViewDataTextColumn>
@@ -250,7 +249,7 @@
                                                             <UpdateParameters>
                                                                 <asp:SessionParameter Name="member_id" SessionField="member_id" />
                                                                 <asp:SessionParameter Name="c_desc" SessionField="c_desc" />
-                                                                <asp:SessionParameter Name=" course_att_no" SessionField=" course_att_no" />
+                                                                <asp:SessionParameter Name="course_att_no" SessionField="course_att_no" />
                                                                 <asp:SessionParameter Name="c_comments" SessionField="c_comments" />
                                                                 <asp:SessionParameter Name="b_date" SessionField="b_date" />
                                                                 <asp:SessionParameter Name="e_date" SessionField="e_date" />
@@ -561,20 +560,20 @@
                     <Columns>
                         <dx:GridViewCommandColumn ShowDeleteButton="True" ShowEditButton="True" ShowInCustomizationForm="True" ShowNewButtonInHeader="True" VisibleIndex="0">
                         </dx:GridViewCommandColumn>
-                        <dx:GridViewDataTextColumn Caption="ID" FieldName="members_id" ShowInCustomizationForm="True" VisibleIndex="1">
+                        <dx:GridViewDataTextColumn Caption="ID" FieldName="members_id" ShowInCustomizationForm="True" VisibleIndex="2">
                             <EditFormSettings Visible="False" />
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn Caption="First" FieldName="f_name" ShowInCustomizationForm="True" VisibleIndex="2">
+                        <dx:GridViewDataTextColumn Caption="First" FieldName="f_name" ShowInCustomizationForm="True" VisibleIndex="3">
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn Caption="Middle" FieldName="m_name" ShowInCustomizationForm="True" VisibleIndex="3">
+                        <dx:GridViewDataTextColumn Caption="Middle" FieldName="m_name" ShowInCustomizationForm="True" VisibleIndex="4">
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn Caption="Last" FieldName="l_name" ShowInCustomizationForm="True" VisibleIndex="4">
+                        <dx:GridViewDataTextColumn Caption="Last" FieldName="l_name" ShowInCustomizationForm="True" VisibleIndex="5">
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataDateColumn Caption="DOB" FieldName="dob" ShowInCustomizationForm="True" VisibleIndex="8">
+                        <dx:GridViewDataDateColumn Caption="DOB" FieldName="dob" ShowInCustomizationForm="True" VisibleIndex="9">
                             <PropertiesDateEdit AnimationType="Fade" EditFormat="Custom" EditFormatString="yyyy-M-dd" DisplayFormatString="dd-MMM-yyyy">
                             </PropertiesDateEdit>
                         </dx:GridViewDataDateColumn>
-                        <dx:GridViewDataTextColumn Caption="SSN" FieldName="ssn" ShowInCustomizationForm="True" Visible="False" VisibleIndex="10">
+                        <dx:GridViewDataTextColumn Caption="SSN" FieldName="ssn" ShowInCustomizationForm="True" Visible="False" VisibleIndex="11">
                         </dx:GridViewDataTextColumn>
                         <dx:GridViewDataTextColumn Caption="Address" FieldName="address" ShowInCustomizationForm="True" Visible="False" VisibleIndex="16">
                         </dx:GridViewDataTextColumn>
@@ -596,27 +595,27 @@
                         </dx:GridViewDataDateColumn>
                         <dx:GridViewDataTextColumn FieldName="next_kin_id" ShowInCustomizationForm="True" Visible="False" VisibleIndex="34">
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataComboBoxColumn Caption="Gender" FieldName="gender_id" VisibleIndex="5">
+                        <dx:GridViewDataComboBoxColumn Caption="Gender" FieldName="gender_id" VisibleIndex="6">
                             <PropertiesComboBox DataSourceID="DSGender" TextField="par_desc" ValueField="par_num">
                             </PropertiesComboBox>
                         </dx:GridViewDataComboBoxColumn>
-                        <dx:GridViewDataComboBoxColumn Caption="Marital Status" FieldName="m_status_id" VisibleIndex="6">
+                        <dx:GridViewDataComboBoxColumn Caption="Marital Status" FieldName="m_status_id" VisibleIndex="7">
                             <PropertiesComboBox DataSourceID="DSMStat" TextField="par_desc" ValueField="par_num">
                             </PropertiesComboBox>
                         </dx:GridViewDataComboBoxColumn>
-                        <dx:GridViewDataComboBoxColumn Caption="Nationality" FieldName="nation_id" VisibleIndex="7">
+                        <dx:GridViewDataComboBoxColumn Caption="Nationality" FieldName="nation_id" VisibleIndex="8">
                             <PropertiesComboBox DataSourceID="DSMNation" TextField="par_desc" ValueField="par_num">
                             </PropertiesComboBox>
                         </dx:GridViewDataComboBoxColumn>
-                        <dx:GridViewDataComboBoxColumn Caption="Parish" FieldName="parishes_id" Visible="False" VisibleIndex="11">
+                        <dx:GridViewDataComboBoxColumn Caption="Parish" FieldName="parishes_id" Visible="False" VisibleIndex="12">
                             <PropertiesComboBox DataSourceID="DSParish" TextField="p_name" ValueField="parishes_id">
                             </PropertiesComboBox>
                         </dx:GridViewDataComboBoxColumn>
-                        <dx:GridViewDataComboBoxColumn Caption="Ministry" FieldName="ministry_id" Visible="False" VisibleIndex="12">
+                        <dx:GridViewDataComboBoxColumn Caption="Ministry" FieldName="ministry_id" Visible="False" VisibleIndex="13">
                             <PropertiesComboBox DataSourceID="DSMinistry" TextField="par_desc" ValueField="par_num">
                             </PropertiesComboBox>
                         </dx:GridViewDataComboBoxColumn>
-                        <dx:GridViewDataComboBoxColumn Caption="Status" FieldName="status_id" Visible="False" VisibleIndex="13">
+                        <dx:GridViewDataComboBoxColumn Caption="Status" FieldName="status_id" VisibleIndex="1">
                             <PropertiesComboBox DataSourceID="DSStatus" TextField="par_desc" ValueField="par_num">
                             </PropertiesComboBox>
                         </dx:GridViewDataComboBoxColumn>
@@ -660,7 +659,7 @@
                         </dx:GridViewDataCheckColumn>
                         <dx:GridViewDataCheckColumn Caption="Confirmed" FieldName="confirm_yn" Visible="False" VisibleIndex="31">
                         </dx:GridViewDataCheckColumn>
-                        <dx:GridViewDataTextColumn Caption="Age" FieldName="FAge" ShowInCustomizationForm="True" UnboundExpression="DateDiffYear([dob], LocalDateTimeToday()) + Iif(GetMonth([dob]) &gt; GetMonth(LocalDateTimeToday()), -1, GetMonth([dob]) = GetMonth(LocalDateTimeToday()), Iif(GetDay([dob]) &gt; GetDay(LocalDateTimeToday()), -1, 0), 0)" UnboundType="Integer" VisibleIndex="9">
+                        <dx:GridViewDataTextColumn Caption="Age" FieldName="FAge" ShowInCustomizationForm="True" UnboundExpression="DateDiffYear([dob], LocalDateTimeToday()) + Iif(GetMonth([dob]) &gt; GetMonth(LocalDateTimeToday()), -1, GetMonth([dob]) = GetMonth(LocalDateTimeToday()), Iif(GetDay([dob]) &gt; GetDay(LocalDateTimeToday()), -1, 0), 0)" UnboundType="Integer" VisibleIndex="10">
                         </dx:GridViewDataTextColumn>
                     </Columns>
                 </dx:ASPxGridView>
